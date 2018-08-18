@@ -20,6 +20,9 @@ import org.usfirst.frc.team3911.robot.subsystems.ExampleSubsystem;
 import org.usfirst.frc.team3911.robot.subsystems.DrivetrainSubsystem;
 
 public class Robot extends TimedRobot {
+	
+	//WE HAVE ADDED ON TO THE ROBOT
+	
 	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	public static OI oi;
 	public static final DrivetrainSubsystem driveTrain = new DrivetrainSubsystem();
