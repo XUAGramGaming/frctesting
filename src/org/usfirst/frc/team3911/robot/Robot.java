@@ -9,6 +9,8 @@ package org.usfirst.frc.team3911.robot;
 
 import org.usfirst.frc.team3911.robot.commands.DriveFowardCommand;
 import org.usfirst.frc.team3911.robot.commands.ExampleCommand;
+import org.usfirst.frc.team3911.robot.commands.LiftArmCommand;
+import org.usfirst.frc.team3911.robot.subsystems.ArmSubsystem;
 import org.usfirst.frc.team3911.robot.subsystems.DrivetrainSubsystem;
 import org.usfirst.frc.team3911.robot.subsystems.ExampleSubsystem;
 
@@ -24,6 +26,7 @@ public class Robot extends TimedRobot {
 	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	public static OI oi;
 	public static final DrivetrainSubsystem driveTrain = new DrivetrainSubsystem();
+	public static final ArmSubsystem armSubsystem = new ArmSubsystem();
 	
 	//subsystem
 	Command choosenCommand;
@@ -37,6 +40,7 @@ public class Robot extends TimedRobot {
 		oi = new OI();
 		autonomousCommandChooser.addDefault("Default Auto", new ExampleCommand());
 		autonomousCommandChooser.addObject("Drive Foward 1 Second", new DriveFowardCommand(1));
+		autonomousCommandChooser.addObject("Life Arm 1 Second", new LiftArmCommand(1));
 		//add more commands here
 		//calls the "initalize" method in commands
 		SmartDashboard.putData("Auto mode", autonomousCommandChooser);
