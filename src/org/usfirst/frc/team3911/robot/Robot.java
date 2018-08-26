@@ -7,26 +7,25 @@
 
 package org.usfirst.frc.team3911.robot;
 
+import org.usfirst.frc.team3911.robot.commands.DriveFowardCommand;
+import org.usfirst.frc.team3911.robot.commands.ExampleCommand;
+import org.usfirst.frc.team3911.robot.subsystems.DrivetrainSubsystem;
+import org.usfirst.frc.team3911.robot.subsystems.ExampleSubsystem;
+
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
-import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-import org.usfirst.frc.team3911.robot.commands.DriveFowardCommand;
-import org.usfirst.frc.team3911.robot.commands.ExampleCommand;
-import org.usfirst.frc.team3911.robot.subsystems.ExampleSubsystem;
-import org.usfirst.frc.team3911.robot.subsystems.DrivetrainSubsystem;
 
 public class Robot extends TimedRobot {
-	
-	//WE HAVE ADDED ON TO THE ROBOT
 	
 	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	public static OI oi;
 	public static final DrivetrainSubsystem driveTrain = new DrivetrainSubsystem();
-
+	
+	//subsystem
 	Command choosenCommand;
 	SendableChooser<Command> autonomousCommandChooser = new SendableChooser<>();
 
@@ -37,7 +36,7 @@ public class Robot extends TimedRobot {
 	public void robotInit() {
 		oi = new OI();
 		autonomousCommandChooser.addDefault("Default Auto", new ExampleCommand());
-		autonomousCommandChooser.addObject("Drive Foward 1 Second", new DriveFowardCommand());
+		autonomousCommandChooser.addObject("Drive Foward 1 Second", new DriveFowardCommand(1));
 		//add more commands here
 		//calls the "initalize" method in commands
 		SmartDashboard.putData("Auto mode", autonomousCommandChooser);

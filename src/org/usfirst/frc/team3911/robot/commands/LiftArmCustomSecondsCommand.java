@@ -13,10 +13,9 @@ import org.usfirst.frc.team3911.robot.Robot;
 /**
  * An example command.  You can replace me with your own command.
  */
-public class ExampleCommand extends Command {
-	public ExampleCommand() {
+public class LiftArmCustomSecondsCommand extends Command {
+	public LiftArmCustomSecondsCommand() {
 		// Use requires() here to declare subsystem dependencies
-		requires(Robot.exampleSubsystem);
 	}
 
 	// Called just before this Command runs the first time
